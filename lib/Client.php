@@ -39,7 +39,7 @@ class Client
             'shopperLocale' => $order->getShopperLocale(),
             'reference' => $order->getReference(),
             'sdkVersion' => $order-> getSDKVersion(),
-
+            'shopperInteraction' => 'Ecommerce',
             /** Enable / Disable RECURRING **/
             'enableOneClick' => 'true',
             'enableRecurring' => 'true',
