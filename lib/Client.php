@@ -96,13 +96,14 @@ class Client
             array(
                 "X-Api-Key: " . $authentication['checkoutAPIkey'],
                 "Content-Type: application/json",
-                "Content-Length: " . strlen($data)
+                "Content-Length: " . strlen($data),
+                "Idempotency-Key: test_idempotency"
             )
         );
 
         // Execute
         $result = curl_exec($curlAPICall);
-		
+
 		// Error Check
 		if ($result === false){
 		  throw new Exception(curl_error($curlAPICall), curl_errno($curlAPICall));
@@ -121,4 +122,3 @@ class Client
     }
 
 }
-
